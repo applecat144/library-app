@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,30 @@
     <script src="script.js" defer></script>
     <title>Document</title>
 </head>
+
 <body>
-    
+    <fieldset>
+        <form action="#" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name">
+            <label for="author">Author</label>
+            <input type="text" id="author">
+            <label for="pageNumber">Number of pages</label>
+            <input type="number" id="pageNumber">
+            <ul>
+                <p>Did you read it ?</p>
+                <li>
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="yes">
+                </li>
+                <li>
+                    <label for="no">No</label>
+                    <input type="radio" id="no">
+                </li>
+            </ul>
+            <button>Add new book !</button>
+        </form>
+    </fieldset>
 </body>
+
 </html>

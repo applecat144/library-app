@@ -1,2 +1,3 @@
-# dummy-website-starter
-This contains the basic html, css and js files aswell as the base html setup to link everything together. Handy !
+# library-app
+
+This is a small library webapp project to practice objects, prototype inheritence, and forms.
