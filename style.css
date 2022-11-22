@@ -77,4 +77,15 @@ html {
   button {
     justify-self: center;
     align-self: center;
+    width: 100%;
+    height: 50%;
+    font-size: 2rem;
+    border-radius: 1rem;
+  }
+
+  input {
+    height: 1.4rem;
+    box-shadow: inset 0 0 2px 1px lightgray;
+    border-radius: 0.4rem;
+    padding: 0 0.5rem;
   }
