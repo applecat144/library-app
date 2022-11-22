@@ -11,28 +11,40 @@
 </head>
 
 <body>
-    <fieldset>
-        <form action="#" method="post">
-            <label for="name">Name</label>
-            <input type="text" id="name">
-            <label for="author">Author</label>
-            <input type="text" id="author">
+    <form action="#" method="post">
+        <div>
+            <div class="name-cont">
+                <label for="name">Name</label>
+                <input type="text" id="name">
+            </div>
+            <div class="author-cont">
+                <label for="author">Author</label>
+                <input type="text" id="author">
+            </div>
+        </div>
+
+        <div>
             <label for="pageNumber">Number of pages</label>
             <input type="number" id="pageNumber">
+        </div>
+        <div>
             <ul>
                 <p>Did you read it ?</p>
                 <li>
-                    <label for="yes">Yes</label>
+            
                     <input type="radio" id="yes">
+                    <label for="yes">Yes</label>
                 </li>
                 <li>
-                    <label for="no">No</label>
+            
                     <input type="radio" id="no">
+                    <label for="no">No</label>
                 </li>
             </ul>
-            <button>Add new book !</button>
-        </form>
-    </fieldset>
+        </div>
+
+        <button>Add new book !</button>
+    </form>
 </body>
 
 </html>

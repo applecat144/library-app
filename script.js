@@ -13,7 +13,5 @@ function addNewBook() {
         , pageNumber = prompt('Number of pages in the book ?', '')
         , readStatus = prompt('Did you read the book ?', '');
 
-    myLibrary[1] = new book(name, author, pageNumber, readStatus);
+    myLibrary[0] = new book(name, author, pageNumber, readStatus);
 }
-
-addNewBook();
