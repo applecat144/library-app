@@ -8,10 +8,12 @@ function book(name, author, pageNumber, readStatus) { //this is the book constru
 }
 
 function addNewBook() {
-    let name = prompt('Name of the book ?', '')
-        , author = prompt('Author of the book ?', '')
-        , pageNumber = prompt('Number of pages in the book ?', '')
-        , readStatus = prompt('Did you read the book ?', '');
-
+    let name = document.querySelector("#name").value
+        , author = document.querySelector("#author").value
+        , pageNumber = document.querySelector("#pageNumber").value
+        , readStatus = document.querySelector('input[name="readStatus"]:checked').value;
+    console.log("yep");
     myLibrary[0] = new book(name, author, pageNumber, readStatus);
 }
+
+document.querySelector('button').addEventListener('click', addNewBook);
