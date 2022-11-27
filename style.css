@@ -15,18 +15,29 @@ html {
   }
 
   body {
-    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
     position: relative;
+    overflow: auto;
+  }
+
+  .whole {
+    background-color: lightgreen;
+    width: min(100%, 1200px);
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 50px;
   }
 
   .header {
     position: fixed;
-    width: 100%;
+    width: inherit;
     height: 100px;
-    padding: 30px 10%;
+    padding: 30px min(120px, 10%);
     background-color: antiquewhite;
     display: flex;
     justify-content: space-between;
+    z-index: 0;
   }
 
   .form-container {
@@ -34,7 +45,7 @@ html {
     align-items: center;
     justify-content: center;
     z-index: 1;
-    width: 100vw;
+    width: inherit;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -114,8 +125,30 @@ html {
     border-bottom: none;
   }
 
-  thead tr {
-    padding-bottom: 20px;
+  tr :first-child,
+  tr :nth-child(2) {
+    text-align: left;
+    width: min(350px, 20%);
+  }
+
+  tr :nth-child(3) {
+    text-align: center;
+  }
+
+  tr :nth-child(3),
+  tr :nth-child(5) {
+    width: 150px;
+  }
+
+  tr :nth-child(4) {
+    width: 150px;
+    text-align: center;
+  }
+
+  .toggle,
+  .remove {
+    margin: 10px;
+    aspect-ratio: 1/1;
   }
 
   .shown {
