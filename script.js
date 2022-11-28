@@ -59,25 +59,36 @@ function displayBook() {
     newBook.classList.add(`book`);
 
     for (let property in myLibrary[currentBook]) {
+        
+        if (property !== 'readStatus'){
         let newCell = document.createElement('td');
         newCell.textContent = `${myLibrary[currentBook][property]}`
         newBook.appendChild(newCell);
+        } else {
+            continue;
+        }
     }
 
     let btnCell = document.createElement('td');
-    let removeBtn = document.createElement('button');
-
-    removeBtn.classList.add('remove');
-    removeBtn.textContent = "d";
-    btnCell.appendChild(removeBtn);
-
+    let btnDiv = document.createElement('div')
 
     let toggleRead = document.createElement('button')
 
     toggleRead.classList.add('toggleRead');
-    toggleRead.textContent = "?";
-    btnCell.appendChild(toggleRead)
 
+    if (myLibrary[currentBook]['readStatus'] === '1') {
+        toggleRead.classList.add('toggle-yes');
+    } else {
+        toggleRead.classList.add('toggle-no');
+    }
+    btnDiv.appendChild(toggleRead)
+
+    let removeBtn = document.createElement('button');
+
+    removeBtn.classList.add('remove');
+    btnDiv.appendChild(removeBtn);
+
+    btnCell.appendChild(btnDiv);
     newBook.appendChild(btnCell);
 
     document.querySelector('tbody').appendChild(newBook);
@@ -107,7 +118,7 @@ function identifyBook() { //this function number the books in the order they're 
 }
 
 function removeBook(e) {
-    let currBook = e.target.parentNode.parentNode.classList[1];
+    let currBook = e.target.parentNode.parentNode.parentNode.classList[1];
     let currBookIndex = currBook.substr(5);
 
     document.querySelector('tbody').removeChild(document.querySelector(`.${currBook}`));
@@ -133,15 +144,17 @@ function addALot() {
 
 function toggleReadFunc(e) {
 
-    let currBook = e.target.parentNode.parentNode.classList[1];
+    let currBook = e.target.parentNode.parentNode.parentNode.classList[1];
     let currBookIndex = currBook.substr(5);
 
     if (myLibrary[currBookIndex]['readStatus'] == '1') {
         myLibrary[currBookIndex]['readStatus'] = '0';
-        document.querySelector(`.${currBook} :nth-child(4)`).textContent = "0";
+        document.querySelector(`.${currBook} .toggleRead`).classList.toggle('toggle-no');
+        document.querySelector(`.${currBook} .toggleRead`).classList.toggle('toggle-yes');
     } else {
         myLibrary[currBookIndex]['readStatus'] = '1';
-        document.querySelector(`.${currBook} :nth-child(4)`).textContent = "1";
+        document.querySelector(`.${currBook} .toggleRead`).classList.toggle('toggle-yes');
+        document.querySelector(`.${currBook} .toggleRead`).classList.toggle('toggle-no');
     }
 
 }
